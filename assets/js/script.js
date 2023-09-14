@@ -29,6 +29,10 @@ for(let link of navLinks) {
   });
 }
 
+document.getElementById("intro-scroll").addEventListener("click", function() {
+  window.scrollTo(0, document.querySelector("#about").offsetTop - header.clientHeight);
+});
+
 let liame = document.getElementById("liame");
 liame.addEventListener("click", function() {
   window.open(["mai", "lto:", "con", "tact", "@", "bigyan", "dahal", ".com"].join(""), "_blank");
