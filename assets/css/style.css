@@ -15,6 +15,21 @@
   z-index: 100;
 }
 
+#tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+
 #header-container {
   z-index: 1;
 }
@@ -227,10 +242,6 @@ section {
 #resume-button a:hover {
   background-color: #eee;
   color: #333;
-}
-
-.project-showcase {
-  margin: auto;
 }
 
 footer {
