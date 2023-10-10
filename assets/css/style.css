@@ -1,5 +1,6 @@
 :root {
   --headerColor: #111;
+  --footerColor: #111;
 }
 
 #spinner-container {
@@ -28,6 +29,11 @@
   padding: 5px 10px;
   border-radius: 10px;
   background-color: #ddd;
+}
+
+.tag.selected {
+  color: #fff;
+  background-color: #111;
 }
 
 #header-container {
@@ -247,7 +253,7 @@ section {
 footer {
   text-align: center;
   color: #eee;
-  background-color: #222;
+  background-color: var(--footerColor);
   padding-bottom: 30px;
 
   display: flex;

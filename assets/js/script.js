@@ -139,8 +139,11 @@ const projects = [
     tags: ["JavaScript/TypeScript", "React", "TailwindCSS"],
   },
 ];
-function filterProjects(tag) {
+function filterProjects(el, tag) {
   const projectsElement = document.querySelector("#projects-container");
+  const selectedTag = document.querySelector(".tag.selected");
+  if(selectedTag) selectedTag.classList.remove("selected");
+  el.classList.add("selected");
   projectsElement.innerHTML = "";
   for(let project of projects) {
     if(project.tags.includes(tag) || tag == "all") {
@@ -162,8 +165,8 @@ function filterProjects(tag) {
 const tags = Array.from(new Set(projects.map(project => project.tags).flat()));
 const tagsElement = document.querySelector("#tags");
 tagsElement.innerHTML = "";
-tagsElement.innerHTML += `<button class="tag" onclick="filterProjects('all')">All</button>`;
+tagsElement.innerHTML += `<button class="tag selected" onclick="filterProjects(this, 'all')">All</button>`;
 for(let tag of tags) {
-  tagsElement.innerHTML += `<button class="tag" onclick="filterProjects('${tag}')">${tag}</button>`;
+  tagsElement.innerHTML += `<button class="tag" onclick="filterProjects(this, '${tag}')">${tag}</button>`;
 }
-filterProjects("all");
+filterProjects(document.querySelectorAll(".tag.selected")[0], "all");
