@@ -4,7 +4,7 @@ setTimeout(function() {
   let spinner = document.getElementById("spinner-container");
   spinner.style.display = "none";
   setTimeout(type, initialDelay);
-}, 0000);
+}, 5000);
 
 document.addEventListener("scroll", function() {
   let header = document.getElementById("header-container");
