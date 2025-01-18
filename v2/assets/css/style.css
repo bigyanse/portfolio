@@ -73,7 +73,7 @@ section {
 
 #intro {
   background-color: rgba(0, 0, 0, 0.7);
-  background-image: url("/assets/img/tech.jpg");
+  background-image: url("../img/tech.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
@@ -105,7 +105,7 @@ section {
 }
 
 .typed-text {
-	color: #00ffff;
+  color: #00ffff;
 }
 
 .typing {
@@ -113,11 +113,25 @@ section {
 }
 
 @keyframes blink {
-  0%  { background-color: #00ffff; }
-  49% { background-color: #00ffff; }
-  50% { background-color: transparent; }
-  99% { background-color: transparent; }
-  100%  { background-color: #00ffff; }
+  0% {
+    background-color: #00ffff;
+  }
+
+  49% {
+    background-color: #00ffff;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  99% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: #00ffff;
+  }
 }
 
 .section-container {
@@ -171,7 +185,8 @@ section {
   padding-bottom: 55px;
 }
 
-#experience, #contact {
+#experience,
+#contact {
   background-color: #eee;
 }
 
@@ -224,7 +239,7 @@ section {
 #resume {
   padding: 100px 0;
   color: #eee;
-  background-image: url("/assets/img/laptop.jpg");
+  background-image: url("../img/laptop.jpg");
   background-color: rgba(0, 0, 0, 0.7);
   background-attachment: fixed;
   background-position: center;
@@ -285,7 +300,8 @@ footer {
   text-decoration: none;
 }
 
-#social a, #social svg {
+#social a,
+#social svg {
   width: 40px;
   height: 40px;
 }
@@ -294,7 +310,7 @@ footer {
   fill: #eee;
 }
 
-@media only screen and (max-width:  992px) {
+@media only screen and (max-width: 992px) {
   #header-container {
     background-color: var(--headerColor);
   }
@@ -339,12 +355,15 @@ footer {
   0% {
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   60% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     top: 90%;

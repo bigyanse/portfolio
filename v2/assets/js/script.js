@@ -8,7 +8,7 @@ setTimeout(function() {
 
 document.addEventListener("scroll", function() {
   let header = document.getElementById("header-container");
-  if(window.scrollY >= 100) {
+  if (window.scrollY >= 100) {
     header.classList.add("scrollHeaderColor");
   } else {
     header.classList.remove("scrollHeaderColor");
@@ -20,9 +20,9 @@ copyrightYear.textContent = new Date().getFullYear();
 
 let navLinks = document.getElementsByClassName("nav-link");
 let header = document.getElementById("header-container");
-for(let link of navLinks) {
+for (let link of navLinks) {
   link.addEventListener("click", function(e) {
-    if(!link.getAttribute("data-link")) {
+    if (!link.getAttribute("data-link")) {
       e.preventDefault();
       window.scrollTo(0, document.querySelector(link.getAttribute("href")).offsetTop - header.clientHeight);
     }
@@ -50,8 +50,8 @@ const erasingDelay = 100;
 const initialDelay = 2000;
 
 const type = () => {
-  if(letterIndex < texts[textIndex].length) {
-    if(!cursor.classList.contains("typing")) cursor.classList.add("typing");
+  if (letterIndex < texts[textIndex].length) {
+    if (!cursor.classList.contains("typing")) cursor.classList.add("typing");
     typedText.textContent += texts[textIndex].charAt(letterIndex);
     letterIndex++;
     setTimeout(type, typingDelay);
@@ -62,15 +62,15 @@ const type = () => {
 };
 
 const erase = () => {
-  if(letterIndex > -1) {
-    if(!cursor.classList.contains("typing")) cursor.classList.add("typing");
+  if (letterIndex > -1) {
+    if (!cursor.classList.contains("typing")) cursor.classList.add("typing");
     typedText.textContent = texts[textIndex].substring(0, letterIndex);
     letterIndex--;
     setTimeout(erase, erasingDelay);
   } else {
     cursor.classList.remove("typing");
     textIndex++;
-    if(textIndex >= texts.length) {
+    if (textIndex >= texts.length) {
       textIndex = 0;
     }
     setTimeout(type, initialDelay);
@@ -81,7 +81,7 @@ const projects = [
   {
     name: "Password Manager (PassMan)",
     description: "A password manager based on Django.",
-    image: "/assets/img/projects/passman.png",
+    image: "assets/img/projects/passman.png",
     links: {
       github: "https://github.com/bigyanse/passman",
       live: "https://iambigyandahal.pythonanywhere.com",
@@ -91,7 +91,7 @@ const projects = [
   {
     name: "Library Management System (LMS)",
     description: "A library management system built using JavaScript/TypeScript, Express, React and TailwindCSS.",
-    image: "/assets/img/projects/lms.png",
+    image: "assets/img/projects/lms.png",
     links: {
       github: "https://github.com/bigyanse/lms-frontend",
       live: "https://library-management-system-lms.netlify.app",
@@ -101,7 +101,7 @@ const projects = [
   {
     name: "Moard",
     description: "A message board built using JavaScript/TypeScript, Express, Pug and TailwindCSS.",
-    image: "/assets/img/projects/moard.jpg",
+    image: "assets/img/projects/moard.jpg",
     links: {
       github: "https://github.com/iambigyandahal/moard",
       live: "https://moard.onrender.com",
@@ -111,7 +111,7 @@ const projects = [
   {
     name: "SamacharAPI",
     description: "An API to get latest news updates from top nepali sites.",
-    image: "/assets/img/projects/samacharapi.jpg",
+    image: "assets/img/projects/samacharapi.jpg",
     links: {
       github: "https://github.com/iambigyandahal/samacharapi",
       live: "https://samacharapi.herokuapp.com",
@@ -121,7 +121,7 @@ const projects = [
   {
     name: "Todo App",
     description: "A todo app made with React, JavaScript/TypeScript and TailwindCSS.",
-    image: "/assets/img/projects/todoapp.jpg",
+    image: "assets/img/projects/todoapp.jpg",
     links: {
       github: "https://github.com/iambigyandahal/todoapp",
       live: "https://thegreattodoapp.netlify.app",
@@ -131,7 +131,7 @@ const projects = [
   {
     name: "Sweneht",
     description: "A HackerNews API powered news aggregator built with JavaScript/TypeScript, React and TailwindCSS.",
-    image: "/assets/img/projects/sweneht.jpg",
+    image: "assets/img/projects/sweneht.jpg",
     links: {
       github: "https://github.com/iambigyandahal/sweneht",
       live: "https://sweneht.netlify.app",
@@ -142,11 +142,11 @@ const projects = [
 function filterProjects(el, tag) {
   const projectsElement = document.querySelector("#projects-container");
   const selectedTag = document.querySelector(".tag.selected");
-  if(selectedTag) selectedTag.classList.remove("selected");
+  if (selectedTag) selectedTag.classList.remove("selected");
   el.classList.add("selected");
   projectsElement.innerHTML = "";
-  for(let project of projects) {
-    if(project.tags.includes(tag) || tag == "all") {
+  for (let project of projects) {
+    if (project.tags.includes(tag) || tag == "all") {
       projectsElement.innerHTML += `
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pb-3">
           <div class="card">
@@ -166,7 +166,7 @@ const tags = Array.from(new Set(projects.map(project => project.tags).flat()));
 const tagsElement = document.querySelector("#tags");
 tagsElement.innerHTML = "";
 tagsElement.innerHTML += `<button class="tag selected" onclick="filterProjects(this, 'all')">All</button>`;
-for(let tag of tags) {
+for (let tag of tags) {
   tagsElement.innerHTML += `<button class="tag" onclick="filterProjects(this, '${tag}')">${tag}</button>`;
 }
 filterProjects(document.querySelectorAll(".tag.selected")[0], "all");
