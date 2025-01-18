@@ -356,6 +356,21 @@ a:hover {
   text-align: center;
 }
 
+.footer__social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footer__social-icons svg {
+  width: 24px;
+  width: 24px;
+}
+
+.footer__social-icons svg path {
+  fill: #ffffff;
+}
+
 #experience {
   display: flex;
   flex-direction: column;
