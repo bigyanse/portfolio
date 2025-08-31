@@ -474,14 +474,6 @@ a:hover {
   letter-spacing: 1px;
 }
 
-.timeline__company {
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: var(--highlight);
-  display: block;
-  margin-top: 2px;
-}
-
 .timeline__description {
   margin-top: 8px;
   font-size: 16px;
