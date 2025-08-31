@@ -1,3 +1,6 @@
 .htaccess
 .well-known
 cgi-bin
+node_modules
+dist
+.env

@@ -30,6 +30,9 @@ const skills = ["html", "css", "sass", "tailwind", "javascript", "typescript", "
 for (let skill of skills) {
   const img = document.createElement("img");
   img.src = `https://skillicons.dev/icons?i=${skill}`;
+  img.alt = skill;
+  img.width = 48;
+  img.height = 48;
   img.setAttribute("loading", "lazy");
   skills_list_section.appendChild(img);
 }

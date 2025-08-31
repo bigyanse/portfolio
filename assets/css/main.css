@@ -1,5 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+/* Font loading is now handled in HTML with preloading and font-display: swap */
+
+/* Critical CSS to prevent layout shifts during font loading */
+@font-face {
+  font-family: 'Outfit';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-display: swap;
+}
+
+/* Font loading optimization */
+html {
+  font-display: swap;
+}
+
+/* Ensure consistent text rendering during font loading */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent layout shifts by ensuring consistent dimensions */
+.about,
+.about__description,
+.header__brand,
+.display__heading,
+.display__designation {
+  font-display: swap;
+  contain: layout style;
+}
+
+/* Smooth font transitions */
+* {
+  font-display: swap;
+}
+
+/* Ensure text elements maintain consistent dimensions */
+.display__heading,
+.display__designation,
+.section__heading,
+.timeline__heading {
+  font-display: swap;
+  contain: layout style;
+}
 
 :root {
   --primary: #1e1e2e;
@@ -39,7 +90,8 @@ body {
   max-width: 800px;
   color: var(--text);
   background-color: var(--primary);
-  font-family: "Outfit";
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-display: swap;
 }
 
 main {
@@ -163,8 +215,9 @@ a:hover {
 
 .header__brand {
   padding-left: 8px;
-  font-family: "Space Grotesk";
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 32px;
+  font-display: swap;
 }
 
 .header__nav {
@@ -320,6 +373,8 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  /* Prevent layout shifts during font loading */
+  min-height: 200px;
 }
 
 .skills {
@@ -340,6 +395,9 @@ a:hover {
 
 .about__description {
   line-height: 1.5em;
+  /* Prevent layout shifts during font loading */
+  min-height: 4.5em;
+  /* 3 lines * 1.5em line-height */
 }
 
 .about__highlight {
@@ -622,14 +680,15 @@ a:hover {
 
   .timeline-circle {
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 50%;
     width: 15px;
     height: 15px;
     border-radius: 50%;
     background-image: linear-gradient(45deg, #F27121, #E94057, #8A2387);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
   }
 
   .projects {
