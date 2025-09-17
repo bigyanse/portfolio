@@ -26,7 +26,7 @@ window.addEventListener("scroll", () => {
 
 const skills_list_section = document.querySelector(".skills__list");
 
-const skills = ["html", "css", "sass", "tailwind", "javascript", "typescript", "react", "redux", "nodejs", "express", "nestjs", "nextjs", "php", "wordpress", "laravel", "python", "flask", "django", "java", "mongodb", "postgresql", "mysql", "git", "linux", "windows", "nix", "bash", "powershell", "go", "rust", "tauri", "docker", "kubernetes", "prometheus", "grafana"];
+const skills = ["html", "css", "sass", "tailwind", "javascript", "typescript", "react", "redux", "nodejs", "express", "nestjs", "nextjs", "php", "wordpress", "laravel", "python", "flask", "django", "java", "mongodb", "postgresql", "mysql", "git", "linux", "windows", "nix", "bash", "powershell", "go", "rust", "tauri", "docker", "kubernetes", "prometheus", "grafana", "aws", "azure"];
 for (let skill of skills) {
   const img = document.createElement("img");
   img.src = `https://skillicons.dev/icons?i=${skill}`;
